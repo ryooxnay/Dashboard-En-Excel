@@ -1,0 +1,10 @@
+Private Sub Worksheet_Change(ByVal Target As Range)
+    Dim rangocelda As Range
+    Dim fila As Integer
+    Set rangocelda = Range("A1:A10")
+If Not Application.Intersect(rangocelda, Range(Target.Address)) Is Nothing Then
+        fila = Target.Row
+        Range("B" + LTrim(fila)).Value = Now
+
+End If
+End Sub
